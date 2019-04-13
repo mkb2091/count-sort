@@ -25,3 +25,24 @@ Add support for more types including i8, u16 and i16
 
 ![Default Sort](benches/default_sort_report.svg)
 ![count_sort::sort_u8](benches/sort_u8_report.svg)
+
+# Usage
+
+Add dependency to Cargo.toml
+```
+[dependencies]
+count_sort = "0.1.0"
+```
+
+And add the following to your code:
+
+```rust
+extern crate count_sort;
+
+fn main () {
+	let mut data: Vec<u8> = vec![252, 107, 81, 35, 185, 18, 175, 130, 37, 166];
+	count_sort::sort_u8(&mut data);
+	println!("{:?}", data);
+
+}
+```
