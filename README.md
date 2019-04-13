@@ -23,8 +23,8 @@ Add support for more types including i8, u16 and i16
 | 65536  | 52.786 ms | 968.00 us |
 | 262144 | 219.08 ms | 3.8404 ms |
 
-![Default Sort](https://github.com/mkb2091/count-sort/benches/default_sort_report.svg)
-![count_sort::sort_u8](https://github.com/mkb2091/count-sort/benches/sort_u8_report.svg)
+![Default Sort](benches/default_sort_report.svg)
+![count_sort::sort_u8](benches/sort_u8_report.svg)
 
 # Usage
 
