@@ -10,10 +10,11 @@ Add support for more types including i8, u16 and i16
 
 # Performance
 
-Time to sort 10 randomly generated vec
+Time to clone and sort 10 randomly generated Vec<u8> of length specified below
 
 | length | .sort()   | sort_u8   |
 |--------|-----------|-----------|
+| 0      | 77.827 ns | 2.2589 us |
 | 1      | 254.34 ns | 2.4830 us |
 | 4      | 311.05 ns | 2.8181 us |
 | 16     | 1.0484 us | 3.4905 us |

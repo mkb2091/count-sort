@@ -29,7 +29,7 @@ fn criterion_benchmark(c: &mut Criterion) {
                     }
                 })
             },
-            &[1, 4, 16, 64, 256, 1024, 4096, 16384, 65536, 262144],
+            &[0, 1, 4, 16, 64, 256, 1024, 4096, 16384, 65536, 262144],
         )
         .with_function("default sort", |b: &mut criterion::Bencher, &&length| {
             let mut rng = rand::thread_rng();
