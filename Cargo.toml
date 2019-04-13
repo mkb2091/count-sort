@@ -9,6 +9,7 @@ repository  = "https://github.com/mkb2091/count-sort"
 license = "MIT"
 keywords = ["sort", "sorting"]
 categories = ["algorithms"]
+readme = "README.md"
 
 [dependencies]
 
