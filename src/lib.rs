@@ -1,3 +1,4 @@
+#[inline]
 pub fn sort_u8(array: &mut Vec<u8>) {
     if array.len() < 2 {
     } else if array.len() < 256 {
