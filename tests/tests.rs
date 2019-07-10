@@ -1,5 +1,3 @@
-use count_sort;
-
 extern crate rand;
 #[cfg(test)]
 mod tests {
