@@ -1,6 +1,6 @@
 [package]
 name = "count_sort"
-version = "0.1.6"
+version = "0.1.7"
 authors = ["Alex Williams <hughaw64@gmail.com>"]
 edition = "2018"
 description = "O(n) sorting library for large datasets with small range of possible values"

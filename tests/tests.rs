@@ -4,7 +4,6 @@ extern crate rand;
 #[macro_use]
 extern crate quickcheck;
 
-
 #[cfg(test)]
 mod tests {
     quickcheck! {
