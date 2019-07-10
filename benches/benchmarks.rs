@@ -1,5 +1,6 @@
 #[macro_use]
 extern crate criterion;
+extern crate dmsort;
 extern crate rand;
 
 use count_sort;
@@ -43,6 +44,29 @@ fn criterion_benchmark(c: &mut Criterion) {
                 pos = (pos + 1) % 1000;
                 let mut now = to_sort[pos].clone();
                 now.sort();
+                criterion::black_box(&now);
+            });
+        })
+        .with_function(
+            "default sort_unstable",
+            |b: &mut criterion::Bencher, &&length| {
+                let mut pos = 0;
+                let to_sort = generate_to_sort(length);
+                b.iter(|| {
+                    pos = (pos + 1) % 1000;
+                    let mut now = to_sort[pos].clone();
+                    now.sort_unstable();
+                    criterion::black_box(&now);
+                });
+            },
+        )
+        .with_function("dmsort", |b: &mut criterion::Bencher, &&length| {
+            let mut pos = 0;
+            let to_sort = generate_to_sort(length);
+            b.iter(|| {
+                pos = (pos + 1) % 1000;
+                let mut now = to_sort[pos].clone();
+                dmsort::sort(&mut now);
                 criterion::black_box(&now);
             });
         }),

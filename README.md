@@ -12,19 +12,19 @@ Add support for more types including i8, u16 and i16
 
 Time to clone and sort randomly generated Vec<u8> of length specified below. Demonstrates for which lengths it is faster, and for which lengths the overhead is too much.
 
-| length | .sort()   | sort_u8   |
-|--------|-----------|-----------|
-| 0      | 11.549 ns | 9.7494 ns |
-| 1      | 24.936 ns | 23.756 ns |
-| 4      | 50.282 ns | 187.28 ns |
-| 16     | 227.07 ns | 335.70 ns |
-| 64     | 2.1468 us | 928.32 ns |
-| 256    | 11.134 us | 2.4155 us |
-| 1024   | 54.347 us | 4.3068 us |
-| 4096   | 246.82 us | 8.2531 us |
-| 16384  | 1.0590 ms | 25.837 us |
-| 65536  | 4.4587 ms | 86.281 us |
-| 262144 | 18.828 ms | 331.67 us |
+| length | sort_u8   | .sort()   | .sort_unstable() | dmsort    |
+|--------|-----------|-----------|------------------|-----------|
+| 0      | 9.3672 ns | 11.633 ns | 11.887 ns        | 11.427 ns |
+| 1      | 24.261 ns | 25.148 ns | 25.700 ns        | 25.442 ns |
+| 4      | 188.95 ns | 48.536 ns | 49.364 ns        | 110.13 ns |
+| 16     | 334.67 ns | 223.30 ns | 238.12 ns        | 429.16 ns |
+| 64     | 909.06 ns | 2.1638 us | 1.4000 us        | 1.8457 us |
+| 256    | 2.3890 us | 11.445 us | 6.5242 us        | 7.3119 us |
+| 1024   | 4.0489 us | 56.754 us | 27.414 us        | 30.193 us |
+| 4096   | 8.0499 us | 255.55 us | 77.200 us        | 85.214 us |
+| 16384  | 22.588 us | 1.0981 ms | 233.50 us        | 265.55 us |
+| 65536  | 85.260 us | 4.6771 ms | 794.74 us        | 914.10 us |
+| 262144 | 336.41 us | 19.938 ms | 3.1294 ms        | 3.4867 ms |
 
 # Usage
 
