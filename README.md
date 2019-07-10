@@ -10,24 +10,21 @@ Add support for more types including i8, u16 and i16
 
 # Performance
 
-Time to clone and sort 10 randomly generated Vec<u8> of length specified below
+Time to clone and sort randomly generated Vec<u8> of length specified below. Demonstrates for which lengths it is faster, and for which lengths the overhead is too much.
 
 | length | .sort()   | sort_u8   |
 |--------|-----------|-----------|
-| 0      | 77.827 ns | 2.2363 us |
-| 1      | 254.34 ns | 2.4040 us |
-| 4      | 311.05 ns | 2.6972 us |
-| 16     | 1.0484 us | 3.2623 us |
-| 64     | 14.810 us | 5.2870 us |
-| 256    | 111.79 us | 11.182 us |
-| 1024   | 632.43 us | 51.417 us |
-| 4096   | 3.1092 ms | 84.417 us |
-| 16384  | 11.990 ms | 251.44 us |
-| 65536  | 52.786 ms | 906.54 us |
-| 262144 | 219.08 ms | 3.6449 ms |
-
-![Default Sort](benches/default_sort_report.svg)
-![count_sort::sort_u8](benches/sort_u8_report.svg)
+| 0      | 11.549 ns | 106.10 ns |
+| 1      | 24.936 ns | 151.45 ns |
+| 4      | 50.282 ns | 190.64 ns |
+| 16     | 227.07 ns | 338.69 ns |
+| 64     | 2.1468 us | 933.21 ns |
+| 256    | 11.134 us | 2.3742 us |
+| 1024   | 54.347 us | 4.2716 us |
+| 4096   | 246.82 us | 8.9416 us |
+| 16384  | 1.0590 ms | 22.883 us |
+| 65536  | 4.4587 ms | 84.286 us |
+| 262144 | 18.828 ms | 331.76 us |
 
 # Usage
 
