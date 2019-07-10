@@ -1,5 +1,6 @@
 pub fn sort_u8(array: &mut Vec<u8>) {
-    if array.len() < 256 {
+    if array.len() < 2 {
+    } else if array.len() < 256 {
         let mut table: [u8; 256] = [0; 256];
         let mut x = 0;
         if array.len() % 2 == 1 {
