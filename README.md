@@ -1,6 +1,6 @@
 # Count Sort
 
-A fast sorting library implementing count sort algorithm which is O(n + k). Designed for very quickly sorting large amounts of data with small range of possible values.
+A fast sorting library implementing count sort algorithm which is O(n + k). Designed for very quickly sorting large amounts of data with small range of possible values. It now supports no_std
 
 Currently only supports u8.
 
