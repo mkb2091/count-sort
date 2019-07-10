@@ -17,10 +17,16 @@ pub fn sort_u8(array: &mut [u8]) {
         }
         let mut pos = 0;
         for (i, amount) in table.iter().enumerate().filter(|(_, &amount)| amount > 0) {
-            for x in pos..(pos + *amount as usize) {
-                array[x] = i as u8;
+            let end = *amount as usize + pos;
+            if *amount % 2 == 1 {
+                array[pos] = i as u8;
+                pos += 1;
             }
-            pos += *amount as usize;
+            while pos < end {
+                array[pos] = i as u8;
+                array[pos + 1] = i as u8;
+                pos += 2;
+            }
         }
     } else if array.len() < 65536 {
         let mut table: [u16; 256] = [0; 256];
@@ -36,10 +42,16 @@ pub fn sort_u8(array: &mut [u8]) {
         }
         let mut pos = 0;
         for (i, amount) in table.iter().enumerate().filter(|(_, &amount)| amount > 0) {
-            for x in pos..(pos + *amount as usize) {
-                array[x] = i as u8;
+            let end = *amount as usize + pos;
+            if *amount % 2 == 1 {
+                array[pos] = i as u8;
+                pos += 1;
             }
-            pos += *amount as usize;
+            while pos < end {
+                array[pos] = i as u8;
+                array[pos + 1] = i as u8;
+                pos += 2;
+            }
         }
     } else {
         let mut table: [usize; 256] = [0; 256];
@@ -55,10 +67,16 @@ pub fn sort_u8(array: &mut [u8]) {
         }
         let mut pos = 0;
         for (i, amount) in table.iter().enumerate().filter(|(_, &amount)| amount > 0) {
-            for x in pos..(pos + amount) {
-                array[x] = i as u8;
+            let end = *amount as usize + pos;
+            if *amount % 2 == 1 {
+                array[pos] = i as u8;
+                pos += 1;
             }
-            pos += amount;
+            while pos < end {
+                array[pos] = i as u8;
+                array[pos + 1] = i as u8;
+                pos += 2;
+            }
         }
     }
 }
