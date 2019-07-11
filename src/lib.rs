@@ -5,19 +5,10 @@ pub fn sort_u8(array: &mut [u8]) {
     if array.len() < 2 {
     } else {
         let mut table: [usize; 256] = [0; 256];
-        let mut x = 0;
-        if array.len() % 2 == 1 {
+        for value in array.iter() {
             unsafe {
-                *table.get_unchecked_mut(*array.get_unchecked(0) as usize) += 1;
+                *table.get_unchecked_mut(*value as usize) += 1;
             }
-            x += 1;
-        }
-        while x < array.len() {
-            unsafe {
-                *table.get_unchecked_mut(*array.get_unchecked(x) as usize) += 1;
-                *table.get_unchecked_mut(*array.get_unchecked(x + 1) as usize) += 1;
-            }
-            x += 2;
         }
         let mut pos = 0;
         for (i, amount) in table.iter().enumerate().filter(|(_, &amount)| amount > 0) {

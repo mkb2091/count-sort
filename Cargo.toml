@@ -1,14 +1,14 @@
 [package]
 name = "count_sort"
-version = "0.1.7"
+version = "0.1.8"
 authors = ["Alex Williams <hughaw64@gmail.com>"]
 edition = "2018"
 description = "O(n) sorting library for large datasets with small range of possible values"
 homepage = "https://github.com/mkb2091/count-sort"
 repository  = "https://github.com/mkb2091/count-sort"
 license = "MIT"
-keywords = ["sort", "sorting"]
-categories = ["algorithms"]
+keywords = ["sort", "sorting", "no_std"]
+categories = ["algorithms", "no-std"]
 readme = "README.md"
 
 [dependencies]
