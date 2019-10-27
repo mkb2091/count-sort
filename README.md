@@ -1,12 +1,14 @@
 # Count Sort
 
+[![Build Status](https://travis-ci.org/mkb2091/count-sort.svg?branch=master)](https://travis-ci.org/mkb2091/count-sort)
+
 A fast sorting library implementing count sort algorithm which is O(n + k). Designed for very quickly sorting large amounts of data with small range of possible values. It now supports no_std
 
-Currently only supports u8 and i8.
+Currently only supports u8, u16, i8 and i16.
 
 # Goals
 
-Add support for more types including u16 and i16
+Improve performance and reduce memory usage.
 
 # Performance
 
@@ -34,7 +36,7 @@ Add dependency to Cargo.toml
 count_sort = "0.2"
 ```
 
-And add the following to your code:
+Use appropriate function out of sort_u8, sort_u16, sort_i8, sort_i16
 
 ```rust
 extern crate count_sort;
