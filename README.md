@@ -2,11 +2,11 @@
 
 A fast sorting library implementing count sort algorithm which is O(n + k). Designed for very quickly sorting large amounts of data with small range of possible values. It now supports no_std
 
-Currently only supports u8.
+Currently only supports u8 and i8.
 
 # Goals
 
-Add support for more types including i8, u16 and i16
+Add support for more types including u16 and i16
 
 # Performance
 
@@ -31,7 +31,7 @@ Time to clone and sort randomly generated Vec<u8> of length specified below. Dem
 Add dependency to Cargo.toml
 ```
 [dependencies]
-count_sort = "0.1"
+count_sort = "0.2"
 ```
 
 And add the following to your code:
