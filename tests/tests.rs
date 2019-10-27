@@ -38,7 +38,7 @@ mod tests {
             assert_eq!(data, first_clone);
         }
     }
-    
+
     #[test]
     fn test_sort_i8() {
         for _ in 0..1000 {

@@ -2,14 +2,20 @@
 
 macro_rules! sort {
     ($inputtype:ty, $storage_type:ty, $array:ident) => {{
-    const is_unsigned: bool = <$inputtype>::min_value() == 0;
-    const size: usize = ((is_unsigned as usize) * (<$inputtype>::max_value() as usize + 1))
-    + ((!is_unsigned as usize) * (((<$inputtype>::max_value() as isize) - (<$inputtype>::min_value() as isize)) as usize + 1));
-    let mut table: [$storage_type; size] = [0; size];
+        const is_unsigned: bool = <$inputtype>::min_value() == 0;
+        const size: usize = ((is_unsigned as usize) * (<$inputtype>::max_value() as usize + 1))
+            + ((!is_unsigned as usize)
+                * (((<$inputtype>::max_value() as isize) - (<$inputtype>::min_value() as isize))
+                    as usize
+                    + 1));
+        let mut table: [$storage_type; size] = [0; size];
         for value in $array.iter() {
             unsafe {
-                *table.get_unchecked_mut(if is_unsigned {*value as $storage_type}
-                else {((*value as isize) - (<$inputtype>::min_value() as isize)) as $storage_type}) += 1;
+                *table.get_unchecked_mut(if is_unsigned {
+                    *value as $storage_type
+                } else {
+                    ((*value as isize) - (<$inputtype>::min_value() as isize)) as $storage_type
+                }) += 1;
             }
         }
         let mut pos = 0;
