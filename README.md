@@ -33,7 +33,7 @@ Time to clone and sort randomly generated Vec<u8> of length specified below. Dem
 Add dependency to Cargo.toml
 ```
 [dependencies]
-count_sort = "0.2"
+count_sort = "0.3"
 ```
 
 Use appropriate function out of sort_u8, sort_u16, sort_i8, sort_i16
