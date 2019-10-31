@@ -1,6 +1,7 @@
 # Count Sort
 
 [![Build Status](https://travis-ci.org/mkb2091/count-sort.svg?branch=master)](https://travis-ci.org/mkb2091/count-sort)
+[![Cargo Status](https://img.shields.io/badge/crates.io-v0.3.0-orange.svg?longCache=true)](https://crates.io/crates/count_sort)
 
 A fast sorting library implementing count sort algorithm which is O(n + k). Designed for very quickly sorting large amounts of data with small range of possible values. It now supports no_std
 
