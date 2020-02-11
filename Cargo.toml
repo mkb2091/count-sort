@@ -15,7 +15,7 @@ readme = "README.md"
 
 [dev-dependencies]
 rand = "0.6"
-criterion = "0.2"
+criterion = "0.3"
 dmsort = "1.0"
 quickcheck = "0.9"
 
