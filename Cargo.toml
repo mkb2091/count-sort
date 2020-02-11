@@ -17,7 +17,7 @@ readme = "README.md"
 rand = "0.6"
 criterion = "0.2"
 dmsort = "1.0"
-quickcheck = "0.8"
+quickcheck = "0.9"
 
 [[bench]]
 name = "benchmarks"
